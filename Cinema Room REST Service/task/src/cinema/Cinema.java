@@ -3,12 +3,12 @@ package cinema;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Room {
+public class Cinema {
     public int total_rows;
     public int total_columns;
     public List<Seat> available_seats;
 
-    public Room(int total_rows, int total_columns) {
+    public Cinema(int total_rows, int total_columns) {
         this.total_rows = total_rows;
         this.total_columns = total_columns;
         this.available_seats = new ArrayList<>();
@@ -18,6 +18,11 @@ public class Room {
                 this.available_seats.add(seat);
             }
         }
+    }
+
+
+    public Cinema() {
+        this(9, 9);
     }
 
     public int getTotal_rows() {
@@ -42,5 +47,14 @@ public class Room {
 
     public void setAvailable_seats(List<Seat> available_seats) {
         this.available_seats = available_seats;
+    }
+
+    @Override
+    public String toString() {
+        return "Cinema{" +
+                "total_rows=" + total_rows +
+                ", total_columns=" + total_columns +
+                ", available_seats=" + available_seats +
+                '}';
     }
 }
